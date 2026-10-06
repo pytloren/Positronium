@@ -91,6 +91,15 @@ pm, ps/ns, eV/keV, barny i jednostki hbar.
 Wymagania: Linux lub zgodne środowisko, `g++`, `make`, CERN ROOT oraz
 `root-config` w `PATH`.
 
+W tym checkoutcie jest też skonfigurowana lokalna kompilacja Windows:
+Visual Studio Community 18 (MSVC x64) i 64-bitowy CERN ROOT w `C:\Root`.
+`build.cmd` konfiguruje i buduje aplikację przez CMake, a `run.cmd` buduje ją
+i uruchamia. Wynik trafia do `build/cmake/Release/Positronium.exe`. W VS Code
+`Ctrl+Shift+B` buduje, `F5` uruchamia debugger, a zadanie
+`Positronium: run with CMake` uruchamia program z konsoli. Konfiguracja
+Windows używa `cmake-windows.cmd` i zależy od tych lokalnych ścieżek
+instalacji; `Makefile` pozostaje ścieżką dla Linuxa.
+
 ```text
 make build                 # buduje ./positronium
 make validation            # buduje ./positronium_validation
@@ -357,7 +366,8 @@ i `LL/coherent dE`: `|E_bound|/E_rad` oraz `|dE|/E_rad`.
 ### 5.8 Argumenty CLI
 
 - `--mode visual|statistical` — wybór głównego trybu;
-- `--phenomenon 1|2|3|4` — numer eksperymentu;
+- `--phenomenon 1..4` — Visual; `1..6` — Statistical (eksperyment 6 to
+  anihilacja kontaktowa ze startu bliskiego stanowi 1s);
 - `--visual-style line|dot` — styl Visual;
 - `--seed UINT64` — deterministyczne ziarno;
 - `--runs N` — liczba trajektorii, domyślnie **1000 dla każdego eksperymentu

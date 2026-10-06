@@ -1,11 +1,11 @@
 {
-  "task.allowAutomaticTasks": "on",
-  "chat.tools.terminal.autoApprove": {
-    "git rev-parse": true,
-    "./positronium": true
-  },
-  "C_Cpp.default.includePath": [
-    "${env:ROOTSYS}/include/"
-  ],
-  "C_Cpp.default.compilerPath": "/usr/bin/g++"
+  "C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+  "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+  "cmake.sourceDirectory": "${workspaceFolder}",
+  "cmake.buildDirectory": "${workspaceFolder}/build/cmake",
+  "cmake.generator": "Visual Studio 18 2026",
+  "cmake.platform": "x64",
+  "cmake.configureSettings": {
+    "ROOT_DIR": "C:/Root/cmake"
+  }
 }

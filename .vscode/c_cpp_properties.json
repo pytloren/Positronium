@@ -1,0 +1,34 @@
+{
+  "configurations": [
+    {
+      "name": "MSVC x64 + CERN ROOT",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+      "intelliSenseMode": "windows-msvc-x64",
+      "cppStandard": "c++20",
+      "cStandard": "c17",
+      "windowsSdkVersion": "10.0.26100.0",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/Root/include",
+        "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/include",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/cppwinrt"
+      ],
+      "forcedInclude": [
+        "C:/Root/include/w32pragma.h",
+        "C:/Root/include/sehmap.h"
+      ],
+      "defines": [
+        "NOMINMAX",
+        "_CRT_SECURE_NO_WARNINGS",
+        "_XKEYCHECK_H",
+        "_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING",
+        "_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING"
+      ]
+    }
+  ],
+  "version": 4
+}

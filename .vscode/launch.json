@@ -1,18 +1,26 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Positronium: debug (MSVC x64 + CERN ROOT)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\build\\cmake\\Release\\Positronium.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [
         {
-            "name": "Debug ROOT Program",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "preLaunchTask": "Cern Root: Build ROOT Program (Debug)"
+          "name": "ROOTSYS",
+          "value": "C:\\Root"
+        },
+        {
+          "name": "PATH",
+          "value": "C:\\Root\\bin;${env:PATH}"
         }
-    ]
+      ],
+      "externalConsole": true,
+      "preLaunchTask": "Positronium: build (MSVC x64 + CERN ROOT)"
+    }
+  ]
 }

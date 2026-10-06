@@ -8,6 +8,12 @@
 /positronium_validation_ubsan
 /positronium_asan
 /positronium_ubsan
+/build/
+/.build/
+*.exe
+*.obj
+*.pdb
+*.ilk
 *.o
 *.d
 

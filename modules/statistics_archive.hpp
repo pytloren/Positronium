@@ -1,5 +1,7 @@
 #pragma once
 
+#include "atomic_file.hpp"
+
 #include <algorithm>
 #include <atomic>
 #include <charconv>
@@ -735,7 +737,8 @@ inline OperationResult writeScientificReferencesText(
             return result;
         }
         std::error_code error;
-        std::filesystem::rename(temporary, destination, error);
+        positronium::file_operations::atomicReplaceFile(
+            temporary, destination, error);
         if (error) result.error = "cannot replace reference file: " + error.message();
     } catch (const std::exception& exception) {
         result.error = exception.what();

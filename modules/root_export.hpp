@@ -1,5 +1,7 @@
 #pragma once
 
+#include "atomic_file.hpp"
+
 #include <TCanvas.h>
 #include <TError.h>
 #include <TFrame.h>
@@ -193,10 +195,10 @@ inline ExportResult savePadPdf(TVirtualPad& pad,
             return result;
         }
 
-        // On POSIX this atomically replaces an existing destination.  If a
-        // platform cannot replace it, keep the previous image and report the
-        // error instead of deleting the known-good file first.
-        std::filesystem::rename(temporary, destination, error);
+        // Replace the old image atomically on supported filesystems and keep
+        // it intact if replacement fails.
+        positronium::file_operations::atomicReplaceFile(
+            temporary, destination, error);
         if (error) {
             result.error = "cannot replace destination: " + error.message();
             return result;
